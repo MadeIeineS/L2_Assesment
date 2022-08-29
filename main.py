@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter import messagebox
+from tkinter.simpledialog import askstring
 
 # Create a variable to store the account balance
 savings_balance = 0
@@ -16,33 +18,9 @@ def update_balance():
 
 
 # Creating a function to create the account
-def account_creation():
-    exit(create_account())
-
-
-# Creating a function to display the Create account screen
 def create_account():
-    root = Tk()
-    root.title("Create account")
-    create_account = True
-
-    # Instructions
-    instruction_label = ttk.Label(root, text="Enter a title for the account, and a starting value, then press submit")
-    instruction_label.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
-
-    # Creating the title for the account
-    account_title = ttk.Label(root, text="Account Title:")
-    account_title.grid(row=1, column=0)
-
-    account_title_entry = ttk.Entry(root, textvariable=account_title)
-    account_title_entry.grid(row=1, column=1, padx=10, pady=3)
-
-    # Making the button that will create the account
-    create_button = ttk.Button(root, text="Create", command=account_creation)
-    create_button.grid(row=1, column=3, columnspan=2, padx=10, pady=10)
-
-    return
-
+    from tkinter.messagebox import showinfo
+    account_title = askstring("Account title", "Enter a title for the account, and a starting value, then press submit")
 
 root = Tk()
 root.title("Finance Manager")
