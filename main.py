@@ -22,8 +22,17 @@ def create_account():
     from tkinter.messagebox import showinfo
     account_title = askstring("Account title", "Enter a title for the account, and a starting value, then press submit")
 
+
 root = Tk()
 root.title("Finance Manager")
+
+# Create the top frame
+top_frame = ttk.LabelFrame(root, text="Account Details")
+top_frame.grid(row=0, column=0, padx=10, pady=10, sticky="NSEW")
+
+# Create the bottom frame
+bottom_frame = ttk.LabelFrame(root)
+bottom_frame.grid(row=1, column=0, padx=10, pady=10, sticky="NSEW")
 
 # Create and set the message text variable
 message_text = StringVar()
